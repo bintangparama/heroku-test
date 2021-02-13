@@ -2,7 +2,13 @@ const express = require('express');
 const app = express();
 const http = require('http').Server(app);
 
-app.use(express.static('public'));
+app.get('/', (req, res) => {
+    res.send('root');
+});
+
+app.get('/test', (req, res) => {
+    res.send('test');
+});
 
 const port = process.env.PORT || 5500;
 
